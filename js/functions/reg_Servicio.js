@@ -128,6 +128,7 @@ $(document).ready(function(){
              $("#cont_Inicio").replaceWith(
                 "<h2>No hay Servicios Agregados </h2>"
             );
+            arrayCategorias.splice(0);
             return;
         }
         var contenido = '';
