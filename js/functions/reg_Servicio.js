@@ -24,10 +24,9 @@ $(document).ready(function(){
             event.preventDefault();
             crearServicio();
             limpiarInputsCrear();
-            // impirimirServicios();
-            // updateLocalStorage();
-           
             window.location.href ="#pag_Inicio";
+            impirimirServicios();
+            location.reload();
         });
         // Abrir datos de un servicio
          $(".verServicio").live("click", function() {
@@ -51,6 +50,7 @@ $(document).ready(function(){
             impirimirServicios();
             updateLocalStorage();
             window.location.href ="#pag_Inicio"
+            location.reload();
            
         });
 
@@ -58,7 +58,6 @@ $(document).ready(function(){
          $('#btn_EliminarServicio').click(function() {
             eliminarServicio();
             updateLocalStorage();
-            // impirimirServicios();
             
         });
 
@@ -124,7 +123,7 @@ $(document).ready(function(){
 
     function impirimirServicios(){
         // $('#listaServicios').empty();
-        console.log(arrayServicios);
+        console.log("Imprimiendo" + arrayServicios);
         if(arrayServicios.length <=0 || arrayServicios === null){
              $("#cont_Inicio").replaceWith(
                 "<h2>No hay Servicios Agregados </h2>"
@@ -223,6 +222,11 @@ $(document).ready(function(){
         }
     }
 
+     console.log(arrayServicios);
+            impirimirServicios();
+            updateLocalStorage();
+            window.location.href="#pag_Inicio";
+
            
    }
 
@@ -241,10 +245,13 @@ $(document).ready(function(){
                     console.log(arrayServicios.splice(i,i));
                 }
             }
-            console.log(arrayServicios);
-            // impirimirServicios();
-            // updateLocalStorage();
+           
        }
+
+            console.log(arrayServicios);
+            impirimirServicios();
+            updateLocalStorage();
+            window.location.href="#pag_Inicio";
       
        
    }
